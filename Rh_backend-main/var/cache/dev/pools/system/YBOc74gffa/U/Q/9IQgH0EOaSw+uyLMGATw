@@ -1,0 +1,3 @@
+<?php //route_name_41f07edf7728d3dd3ca5464c090cdff0
+
+return [PHP_INT_MAX, 'api_absences_get_collection'];

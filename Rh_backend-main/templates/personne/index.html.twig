@@ -1,0 +1,85 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Personne index{% endblock %}
+
+{% block body %}
+    <h1>Personne index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Type</th>
+                <th>Code</th>
+                <th>Actif</th>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>Genre</th>
+                <th>DateDeNaissance</th>
+                <th>Ncin</th>
+                <th>ValidateCin</th>
+                <th>IdBadge</th>
+                <th>Nmobile</th>
+                <th>Email</th>
+                <th>NumeroMaison</th>
+                <th>Adresse</th>
+                <th>CodePostale</th>
+                <th>Ville</th>
+                <th>Pays</th>
+                <th>Qualification</th>
+                <th>Remarque</th>
+                <th>Profile</th>
+                <th>Taux</th>
+                <th>HeuresMax</th>
+                <th>FormationSecurite</th>
+                <th>ValiditeFormationSecurite</th>
+                <th>AutoriseesEvaluation</th>
+                <th>Valeur</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for personne in personnes %}
+            <tr>
+                <td>{{ personne.id }}</td>
+                <td>{{ personne.type }}</td>
+                <td>{{ personne.code }}</td>
+                <td>{{ personne.actif ? 'Yes' : 'No' }}</td>
+                <td>{{ personne.nom }}</td>
+                <td>{{ personne.prenom }}</td>
+                <td>{{ personne.genre }}</td>
+                <td>{{ personne.dateDeNaissance ? personne.dateDeNaissance|date('Y-m-d') : '' }}</td>
+                <td>{{ personne.ncin }}</td>
+                <td>{{ personne.validateCin ? personne.validateCin|date('Y-m-d') : '' }}</td>
+                <td>{{ personne.idBadge }}</td>
+                <td>{{ personne.nmobile }}</td>
+                <td>{{ personne.email }}</td>
+                <td>{{ personne.numeroMaison }}</td>
+                <td>{{ personne.adresse }}</td>
+                <td>{{ personne.codePostale }}</td>
+                <td>{{ personne.ville }}</td>
+                <td>{{ personne.pays }}</td>
+                <td>{{ personne.qualification }}</td>
+                <td>{{ personne.remarque }}</td>
+                <td>{{ personne.profile }}</td>
+                <td>{{ personne.taux }}</td>
+                <td>{{ personne.heuresMax }}</td>
+                <td>{{ personne.formationSecurite ? 'Yes' : 'No' }}</td>
+                <td>{{ personne.validiteFormationSecurite ? personne.validiteFormationSecurite|date('Y-m-d') : '' }}</td>
+                <td>{{ personne.autoriseesEvaluation ? 'Yes' : 'No' }}</td>
+                <td>{{ personne.valeur }}</td>
+                <td>
+                    <a href="{{ path('app_personne_show', {'id': personne.id}) }}">show</a>
+                    <a href="{{ path('app_personne_edit', {'id': personne.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="28">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_personne_new') }}">Create new</a>
+{% endblock %}

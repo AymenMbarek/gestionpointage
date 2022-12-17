@@ -1,0 +1,3 @@
+<?php //route_name_77a8886dea8b668341b5743b5ff8c92b
+
+return [PHP_INT_MAX, 'api_personnes_get_collection'];

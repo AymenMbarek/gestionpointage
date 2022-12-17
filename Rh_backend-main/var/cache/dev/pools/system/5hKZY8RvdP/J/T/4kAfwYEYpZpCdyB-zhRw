@@ -1,0 +1,3 @@
+<?php //route_name_a24f1f6d439ac0efe114a8ef5b36bd59
+
+return [PHP_INT_MAX, 'api_objet_remis_get_item'];

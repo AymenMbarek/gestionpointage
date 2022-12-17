@@ -1,0 +1,3 @@
+<?php //route_name_c53eb2d7061225e873a930c0d608c77e
+
+return [PHP_INT_MAX, 'api_pointages_get_collection'];

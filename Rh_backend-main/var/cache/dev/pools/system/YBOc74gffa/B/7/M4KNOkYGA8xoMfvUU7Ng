@@ -1,0 +1,3 @@
+<?php //route_name_62dd5166607555fa1df700da910de143
+
+return [PHP_INT_MAX, 'api_chantiers_get_item'];

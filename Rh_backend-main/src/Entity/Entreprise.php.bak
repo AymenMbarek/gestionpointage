@@ -1,0 +1,291 @@
+<?php
+
+namespace App\Entity;
+
+use ApiPlatform\Core\Annotation\ApiResource;
+use App\Repository\EntrepriseRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
+use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
+
+#[ORM\Entity(repositoryClass: EntrepriseRepository::class)]
+#[ApiResource(
+    normalizationContext: ['groups' => ['entreprise']],
+    denormalizationContext: ['groups' => ['write:Post']],
+    itemOperations: [
+        'put', 'delete',
+        'get' => [
+            'normalization_context' => ['groups' => ['entreprise','read:item', 'read:Post']],
+        ],
+    ],
+)]
+class Entreprise
+{
+    #[ORM\Id]
+    #[ORM\GeneratedValue]
+    #[ORM\Column]
+    #[Groups(["entreprise"])]
+    private ?int $id = null;
+
+    #[ORM\Column(nullable: true)]
+    #[Groups(["entreprise", "write:Post"])]
+    private ?bool $actif = null;
+
+    #[ORM\Column(length: 255)]
+    #[Groups(["entreprise", "write:Post"])]
+    private ?string $code = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    #[Groups(["entreprise","contrat","contact","tarif", "write:Post"])]
+    private ?string $denomination = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    #[Groups(["entreprise", "write:Post"])]
+    private ?string $tel = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    #[Groups(["entreprise", "write:Post"])]
+    private ?string $numero = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    #[Groups(["entreprise", "write:Post"])]
+    private ?string $adresse = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    #[Groups(["entreprise", "write:Post"])]
+    private ?string $codePostale = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    #[Groups(["entreprise",'read:item', "write:Post"])]
+    private ?string $ville = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    #[Groups(["entreprise",'read:item', "write:Post"])]
+    private ?string $pays = null;
+
+    #[ORM\OneToMany(mappedBy: 'entreprise', targetEntity: Contact::class)]
+    #[Groups(['read:item', 'entreprise'])]
+    private Collection $contacts;
+
+    #[ORM\OneToMany(mappedBy: 'employeur', targetEntity: Contrat::class)]
+    #[Groups(['read:item'])]
+    private Collection $contrats;
+
+    #[ORM\OneToMany(mappedBy: 'entreprise', targetEntity: Tarif::class)]
+    private Collection $tarifs;
+
+    public function __construct()
+    {
+        $this->actif = true;
+        $this->contacts = new ArrayCollection();
+        $this->contrats = new ArrayCollection();
+        $this->tarifs = new ArrayCollection();
+     
+    }
+
+    public function getId(): ?int
+    {
+        return $this->id;
+    }
+
+    public function isActif(): ?bool
+    {
+        return $this->actif;
+    }
+
+    public function setActif(?bool $actif): self
+    {
+        $this->actif = $actif;
+
+        return $this;
+    }
+
+    public function getCode(): ?string
+    {
+        return $this->code;
+    }
+
+    public function setCode(string $code): self
+    {
+        $this->code = $code;
+
+        return $this;
+    }
+
+    public function getDenomination(): ?string
+    {
+        return $this->denomination;
+    }
+
+    public function setDenomination(?string $denomination): self
+    {
+        $this->denomination = $denomination;
+
+        return $this;
+    }
+
+    public function getTel(): ?string
+    {
+        return $this->tel;
+    }
+
+    public function setTel(?string $tel): self
+    {
+        $this->tel = $tel;
+
+        return $this;
+    }
+
+    public function getNumero(): ?string
+    {
+        return $this->numero;
+    }
+
+    public function setNumero(?string $numero): self
+    {
+        $this->numero = $numero;
+
+        return $this;
+    }
+
+    public function getAdresse(): ?string
+    {
+        return $this->adresse;
+    }
+
+    public function setAdresse(?string $adresse): self
+    {
+        $this->adresse = $adresse;
+
+        return $this;
+    }
+
+    public function getCodePostale(): ?string
+    {
+        return $this->codePostale;
+    }
+
+    public function setCodePostale(?string $codePostale): self
+    {
+        $this->codePostale = $codePostale;
+
+        return $this;
+    }
+
+    public function getVille(): ?string
+    {
+        return $this->ville;
+    }
+
+    public function setVille(?string $ville): self
+    {
+        $this->ville = $ville;
+
+        return $this;
+    }
+
+    public function getPays(): ?string
+    {
+        return $this->pays;
+    }
+
+    public function setPays(?string $pays): self
+    {
+        $this->pays = $pays;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Contact>
+     */
+    public function getContacts(): Collection
+    {
+        return $this->contacts;
+    }
+
+    public function addContact(Contact $contact): self
+    {
+        if (!$this->contacts->contains($contact)) {
+            $this->contacts->add($contact);
+            $contact->setEntreprise($this);
+        }
+
+        return $this;
+    }
+
+    public function removeContact(Contact $contact): self
+    {
+        if ($this->contacts->removeElement($contact)) {
+            // set the owning side to null (unless already changed)
+            if ($contact->getEntreprise() === $this) {
+                $contact->setEntreprise(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Contrat>
+     */
+    public function getContrats(): Collection
+    {
+        return $this->contrats;
+    }
+
+    public function addContrat(Contrat $contrat): self
+    {
+        if (!$this->contrats->contains($contrat)) {
+            $this->contrats->add($contrat);
+            $contrat->setEmployeur($this);
+        }
+
+        return $this;
+    }
+
+    public function removeContrat(Contrat $contrat): self
+    {
+        if ($this->contrats->removeElement($contrat)) {
+            // set the owning side to null (unless already changed)
+            if ($contrat->getEmployeur() === $this) {
+                $contrat->setEmployeur(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Tarif>
+     */
+    public function getTarifs(): Collection
+    {
+        return $this->tarifs;
+    }
+
+    public function addTarif(Tarif $tarif): self
+    {
+        if (!$this->tarifs->contains($tarif)) {
+            $this->tarifs->add($tarif);
+            $tarif->setEntreprise($this);
+        }
+
+        return $this;
+    }
+
+    public function removeTarif(Tarif $tarif): self
+    {
+        if ($this->tarifs->removeElement($tarif)) {
+            // set the owning side to null (unless already changed)
+            if ($tarif->getEntreprise() === $this) {
+                $tarif->setEntreprise(null);
+            }
+        }
+
+        return $this;
+    }
+
+    
+}

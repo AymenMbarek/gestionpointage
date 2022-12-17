@@ -1,0 +1,3 @@
+<?php //route_name_a860467ae719d6bc9bc45ee250f237ec
+
+return [PHP_INT_MAX, 'api_activities_get_item'];

@@ -1,0 +1,39 @@
+{
+  "files": {
+    "main.css": "/static/css/main.162fcd2c.chunk.css",
+    "main.js": "/static/js/main.57ad7597.chunk.js",
+    "main.js.map": "/static/js/main.57ad7597.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.8f9b31cf.js",
+    "runtime-main.js.map": "/static/js/runtime-main.8f9b31cf.js.map",
+    "static/css/2.aae90926.chunk.css": "/static/css/2.aae90926.chunk.css",
+    "static/js/2.72ec4f33.chunk.js": "/static/js/2.72ec4f33.chunk.js",
+    "static/js/2.72ec4f33.chunk.js.map": "/static/js/2.72ec4f33.chunk.js.map",
+    "static/js/3.913850ed.chunk.js": "/static/js/3.913850ed.chunk.js",
+    "static/js/3.913850ed.chunk.js.map": "/static/js/3.913850ed.chunk.js.map",
+    "static/js/4.22947236.chunk.js": "/static/js/4.22947236.chunk.js",
+    "static/js/4.22947236.chunk.js.map": "/static/js/4.22947236.chunk.js.map",
+    "static/js/5.df475be3.chunk.js": "/static/js/5.df475be3.chunk.js",
+    "static/js/5.df475be3.chunk.js.map": "/static/js/5.df475be3.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/2.aae90926.chunk.css.map": "/static/css/2.aae90926.chunk.css.map",
+    "static/css/main.162fcd2c.chunk.css.map": "/static/css/main.162fcd2c.chunk.css.map",
+    "static/js/2.72ec4f33.chunk.js.LICENSE.txt": "/static/js/2.72ec4f33.chunk.js.LICENSE.txt",
+    "static/js/3.913850ed.chunk.js.LICENSE.txt": "/static/js/3.913850ed.chunk.js.LICENSE.txt",
+    "static/js/4.22947236.chunk.js.LICENSE.txt": "/static/js/4.22947236.chunk.js.LICENSE.txt",
+    "static/js/5.df475be3.chunk.js.LICENSE.txt": "/static/js/5.df475be3.chunk.js.LICENSE.txt",
+    "static/media/theme.scss": "/static/media/typicons.d45316f6.ttf",
+    "static/media/img-3.7f83c284.jpg": "/static/media/img-3.7f83c284.jpg",
+    "static/media/img-4.4542c2da.jpg": "/static/media/img-4.4542c2da.jpg",
+    "static/media/layout-1.624ded4a.jpg": "/static/media/layout-1.624ded4a.jpg",
+    "static/media/layout-2.8582036f.jpg": "/static/media/layout-2.8582036f.jpg",
+    "static/media/layout-3.6b1b041b.jpg": "/static/media/layout-3.6b1b041b.jpg",
+    "static/media/pointage.606607f1.png": "/static/media/pointage.606607f1.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.8f9b31cf.js",
+    "static/css/2.aae90926.chunk.css",
+    "static/js/2.72ec4f33.chunk.js",
+    "static/css/main.162fcd2c.chunk.css",
+    "static/js/main.57ad7597.chunk.js"
+  ]
+}

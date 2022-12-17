@@ -1,0 +1,3 @@
+<?php //route_name_671504c90ca9873e2ce48a092581890a
+
+return [PHP_INT_MAX, 'api_contrats_get_item'];

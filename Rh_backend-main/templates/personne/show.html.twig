@@ -1,0 +1,126 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Personne{% endblock %}
+
+{% block body %}
+    <h1>Personne</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ personne.id }}</td>
+            </tr>
+            <tr>
+                <th>Type</th>
+                <td>{{ personne.type }}</td>
+            </tr>
+            <tr>
+                <th>Code</th>
+                <td>{{ personne.code }}</td>
+            </tr>
+            <tr>
+                <th>Actif</th>
+                <td>{{ personne.actif ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ personne.nom }}</td>
+            </tr>
+            <tr>
+                <th>Prenom</th>
+                <td>{{ personne.prenom }}</td>
+            </tr>
+            <tr>
+                <th>Genre</th>
+                <td>{{ personne.genre }}</td>
+            </tr>
+            <tr>
+                <th>DateDeNaissance</th>
+                <td>{{ personne.dateDeNaissance ? personne.dateDeNaissance|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Ncin</th>
+                <td>{{ personne.ncin }}</td>
+            </tr>
+            <tr>
+                <th>ValidateCin</th>
+                <td>{{ personne.validateCin ? personne.validateCin|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>IdBadge</th>
+                <td>{{ personne.idBadge }}</td>
+            </tr>
+            <tr>
+                <th>Nmobile</th>
+                <td>{{ personne.nmobile }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ personne.email }}</td>
+            </tr>
+            <tr>
+                <th>NumeroMaison</th>
+                <td>{{ personne.numeroMaison }}</td>
+            </tr>
+            <tr>
+                <th>Adresse</th>
+                <td>{{ personne.adresse }}</td>
+            </tr>
+            <tr>
+                <th>CodePostale</th>
+                <td>{{ personne.codePostale }}</td>
+            </tr>
+            <tr>
+                <th>Ville</th>
+                <td>{{ personne.ville }}</td>
+            </tr>
+            <tr>
+                <th>Pays</th>
+                <td>{{ personne.pays }}</td>
+            </tr>
+            <tr>
+                <th>Qualification</th>
+                <td>{{ personne.qualification }}</td>
+            </tr>
+            <tr>
+                <th>Remarque</th>
+                <td>{{ personne.remarque }}</td>
+            </tr>
+            <tr>
+                <th>Profile</th>
+                <td>{{ personne.profile }}</td>
+            </tr>
+            <tr>
+                <th>Taux</th>
+                <td>{{ personne.taux }}</td>
+            </tr>
+            <tr>
+                <th>HeuresMax</th>
+                <td>{{ personne.heuresMax }}</td>
+            </tr>
+            <tr>
+                <th>FormationSecurite</th>
+                <td>{{ personne.formationSecurite ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>ValiditeFormationSecurite</th>
+                <td>{{ personne.validiteFormationSecurite ? personne.validiteFormationSecurite|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>AutoriseesEvaluation</th>
+                <td>{{ personne.autoriseesEvaluation ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Valeur</th>
+                <td>{{ personne.valeur }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_personne_index') }}">back to list</a>
+
+    <a href="{{ path('app_personne_edit', {'id': personne.id}) }}">edit</a>
+
+    {{ include('personne/_delete_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,3 @@
+<?php //route_name_7e09af6c2b5b7d56d0fe6c0cfe8baa51
+
+return [PHP_INT_MAX, 'api_holidays_get_item'];

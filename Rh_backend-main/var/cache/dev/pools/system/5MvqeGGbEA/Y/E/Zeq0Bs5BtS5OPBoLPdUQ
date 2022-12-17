@@ -1,0 +1,3 @@
+<?php //route_name_c01d15921d7375d00bcb84f9dcbe9239
+
+return [PHP_INT_MAX, 'api_holidays_get_collection'];

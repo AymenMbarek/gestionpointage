@@ -1,0 +1,222 @@
+<?php //resource_metadata_71bc4fedc43d9e02e9354317243012b7
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['ApiPlatform\\Core\\Metadata\\Resource\\ResourceMetadata'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('ApiPlatform\\Core\\Metadata\\Resource\\ResourceMetadata')),
+    ],
+    null,
+    [
+        'ApiPlatform\\Core\\Metadata\\Resource\\ResourceMetadata' => [
+            'shortName' => [
+                'Chantier',
+            ],
+            'itemOperations' => [
+                [
+                    'put' => [
+                        'method' => 'PUT',
+                        'stateless' => null,
+                        'input_formats' => [
+                            'jsonld' => [
+                                'application/ld+json',
+                            ],
+                            'json' => [
+                                'application/json',
+                            ],
+                            'html' => [
+                                'text/html',
+                            ],
+                        ],
+                        'output_formats' => [
+                            'jsonld' => [
+                                'application/ld+json',
+                            ],
+                            'json' => [
+                                'application/json',
+                            ],
+                            'html' => [
+                                'text/html',
+                            ],
+                        ],
+                    ],
+                    'delete' => [
+                        'method' => 'DELETE',
+                        'stateless' => null,
+                        'input_formats' => [
+                            'jsonld' => [
+                                'application/ld+json',
+                            ],
+                            'json' => [
+                                'application/json',
+                            ],
+                            'html' => [
+                                'text/html',
+                            ],
+                        ],
+                        'output_formats' => [
+                            'jsonld' => [
+                                'application/ld+json',
+                            ],
+                            'json' => [
+                                'application/json',
+                            ],
+                            'html' => [
+                                'text/html',
+                            ],
+                        ],
+                    ],
+                    'get' => [
+                        'normalization_context' => [
+                            'groups' => [
+                                'chantier',
+                                'read:item',
+                                'read:Post',
+                            ],
+                        ],
+                        'input' => null,
+                        'output' => null,
+                        'method' => 'GET',
+                        'stateless' => null,
+                        'input_formats' => [
+                            'jsonld' => [
+                                'application/ld+json',
+                            ],
+                            'json' => [
+                                'application/json',
+                            ],
+                            'html' => [
+                                'text/html',
+                            ],
+                        ],
+                        'output_formats' => [
+                            'jsonld' => [
+                                'application/ld+json',
+                            ],
+                            'json' => [
+                                'application/json',
+                            ],
+                            'html' => [
+                                'text/html',
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+            'collectionOperations' => [
+                [
+                    'get' => [
+                        'method' => 'GET',
+                        'stateless' => null,
+                        'input_formats' => [
+                            'jsonld' => [
+                                'application/ld+json',
+                            ],
+                            'json' => [
+                                'application/json',
+                            ],
+                            'html' => [
+                                'text/html',
+                            ],
+                        ],
+                        'output_formats' => [
+                            'jsonld' => [
+                                'application/ld+json',
+                            ],
+                            'json' => [
+                                'application/json',
+                            ],
+                            'html' => [
+                                'text/html',
+                            ],
+                        ],
+                    ],
+                    'post' => [
+                        'method' => 'POST',
+                        'stateless' => null,
+                        'input_formats' => [
+                            'jsonld' => [
+                                'application/ld+json',
+                            ],
+                            'json' => [
+                                'application/json',
+                            ],
+                            'html' => [
+                                'text/html',
+                            ],
+                        ],
+                        'output_formats' => [
+                            'jsonld' => [
+                                'application/ld+json',
+                            ],
+                            'json' => [
+                                'application/json',
+                            ],
+                            'html' => [
+                                'text/html',
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+            'graphql' => [
+                [
+                    'item_query' => [],
+                    'collection_query' => [],
+                    'delete' => [],
+                    'update' => [],
+                    'create' => [],
+                ],
+            ],
+            'attributes' => [
+                [
+                    'cache_headers' => null,
+                    'denormalization_context' => [
+                        'groups' => [
+                            'write:Post',
+                        ],
+                    ],
+                    'deprecation_reason' => null,
+                    'elasticsearch' => null,
+                    'fetch_partial' => null,
+                    'force_eager' => false,
+                    'formats' => null,
+                    'filters' => null,
+                    'hydra_context' => null,
+                    'input' => null,
+                    'mercure' => null,
+                    'messenger' => null,
+                    'normalization_context' => [
+                        'groups' => [
+                            'chantier',
+                        ],
+                        'enable_max_depth' => true,
+                    ],
+                    'openapi_context' => null,
+                    'order' => null,
+                    'output' => null,
+                    'pagination_client_enabled' => null,
+                    'pagination_client_items_per_page' => null,
+                    'pagination_client_partial' => null,
+                    'pagination_via_cursor' => null,
+                    'pagination_enabled' => null,
+                    'pagination_fetch_join_collection' => null,
+                    'pagination_items_per_page' => null,
+                    'pagination_maximum_items_per_page' => null,
+                    'pagination_partial' => null,
+                    'route_prefix' => null,
+                    'security' => null,
+                    'security_message' => null,
+                    'security_post_denormalize' => null,
+                    'security_post_denormalize_message' => null,
+                    'stateless' => null,
+                    'sunset' => null,
+                    'swagger_context' => null,
+                    'validation_groups' => null,
+                    'url_generation_strategy' => null,
+                    'composite_identifier' => null,
+                ],
+            ],
+        ],
+    ],
+    $o[0],
+    []
+); }];

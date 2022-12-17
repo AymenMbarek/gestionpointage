@@ -1,0 +1,13 @@
+api_platform:
+    title: 'ASSIST Rh'
+    description: 'A rest API to manage a backend project.'
+    version: '1.0.0'
+    mapping:
+        paths: ['%kernel.project_dir%/src/Entity']
+    eager_loading:
+        force_eager: false
+        max_joins: 100
+    patch_formats:
+        json: ['application/merge-patch+json']
+    swagger:
+        versions: [3]

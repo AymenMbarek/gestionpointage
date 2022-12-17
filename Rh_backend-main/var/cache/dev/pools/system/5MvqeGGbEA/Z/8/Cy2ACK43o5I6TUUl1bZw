@@ -1,0 +1,3 @@
+<?php //route_name_e99d93e37739885f44d78221d0ea3b30
+
+return [PHP_INT_MAX, 'api_entreprises_get_item'];

@@ -1,0 +1,3 @@
+<?php //route_name_1bcfd0a839c1e468ea44ce4149e31116
+
+return [PHP_INT_MAX, 'api_qualifications_get_collection'];
